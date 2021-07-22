@@ -1,0 +1,21 @@
+<!DOCTYPE html>{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center">All Users</h1>
+    <div class="d-flex p-3">
+        {% for user in all_users %}
+            <div class="card m-3" style="width: 18rem;">
+
+            <img class="card-img-top" src="{{ user.profile.profile_image.url }}" alt="Card image cap">
+            <div class="card-body">
+        <h5 class="card-title">{{ user.username }}</h5>
+        <p class="card-text">{{ user.email }}</p>
+    </div>
+</div>
+
+
+        {% endfor %}
+    </div>
+
+{% endblock %}
